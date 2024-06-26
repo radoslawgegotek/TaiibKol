@@ -1,0 +1,23 @@
+<h1>{{isFormView ? 'Mouse Form' : 'Mouse List'}}</h1><br>
+
+<button (click)="switchView()">{{isFormView ? 'Anuluj dodawanie myszki' : 'Dodaj myszke'}}</button> <br><br>
+
+@if (!isFormView) {
+<table border="1">
+  <thead>
+    <th>ID</th>
+    <th>Model</th>
+    <th>DPI</th>
+  </thead>
+
+  <tbody>
+    @for (item of mouseList; track $index) {
+    <tr [app-mouse-row]="item"
+        (deleted)="onMouseDelete($event)">
+    </tr>
+    }
+  </tbody>
+</table>
+} @else {
+<app-mouse-form (submitted)="onFormSubmitted($event)"></app-mouse-form>
+}

@@ -1,0 +1,26 @@
+<form #Form="ngForm"
+      (ngSubmit)="onSubmit($event)">
+  <div>
+    <label for="model">Podaj model</label><br>
+    <input id="model"
+           name="model"
+           type="text"
+           [(ngModel)]="mouseForm.model"
+           required
+           min="3" />
+  </div>
+  <div>
+    <label for="dpi">Podaj dpi</label><br>
+    <input id="dpi"
+           name="dpi"
+           type="number"
+           [(ngModel)]="mouseForm.dpi"
+           required
+           minlength="3" />
+  </div>
+  <input id="submit"
+         name="submit"
+         type="submit"
+         value="Wyślij"
+         [disabled]="Form.invalid" />
+</form>

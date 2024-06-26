@@ -1,0 +1,22 @@
+ul {
+  margin: 0;
+  padding: 0;
+  background-color: #333;
+}
+
+li {
+  display: inline;
+  margin-right: 15px;
+}
+
+li a {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+}
+
+li a:hover {
+  background-color: #575757;
+  cursor: pointer;
+}
